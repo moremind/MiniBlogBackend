@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.javanorth.javanorthapp.dao.ArticleDao">
+<!--    boolean insertArticle(ArticleDTO articleDTO);-->
+    <insert id="insertArticle" parameterType="com.javanorth.javanorthapp.entity.Article">
+        insert into tb_article(author, title, tags, category, content, publish_time)
+        values(#{author, jdbcType=VARCHAR}, #{title, jdbcType=VARCHAR}, #{tags, jdbcType=VARCHAR},
+        #{category, jdbcType=VARCHAR}, #{content, jdbcType=LONGVARCHAR}, #{publishTime, jdbcType=TIMESTAMP})
+    </insert>
+<!--    List<Article> getAllArticle();-->
+    <select id="getAllArticle" resultType="com.javanorth.javanorthapp.entity.ArticleEntity">
+        select article_id, title, author, category, tags, content, publish_time
+        from tb_article
+    </select>
+</mapper>
