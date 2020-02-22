@@ -19,6 +19,7 @@ public class Article implements Cloneable {
     private String author;
     private String title;
     private String tags;
+    private String thumb;
     private String category;
     private String content;
     private String publishTime;
@@ -28,12 +29,13 @@ public class Article implements Cloneable {
     public Article() {
     }
 
-    public Article(Integer articleId, String author, String title, String tags, String category, String content,
-                   String publishTime, String insertTime, String updateTime) {
+    public Article(Integer articleId, String author, String title, String tags, String thumb, String category,
+                   String content, String publishTime, String insertTime, String updateTime) {
         this.articleId = articleId;
         this.author = author;
         this.title = title;
         this.tags = tags;
+        this.thumb = thumb;
         this.category = category;
         this.content = content;
         this.publishTime = publishTime;

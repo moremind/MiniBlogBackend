@@ -11,7 +11,28 @@
     </insert>
 <!--    List<Article> getAllArticle();-->
     <select id="getAllArticle" resultType="com.javanorth.javanorthapp.entity.ArticleEntity">
-        select article_id, title, author, category, tags, content, publish_time
+        select article_id, title, author, category, thumb, tags, publish_time
         from tb_article
+    </select>
+
+<!--    String getArticleContent(Integer articleId);-->
+    <select id="getArticleContent" resultType="java.lang.String">
+        select content
+        from tb_article
+        where article_id = #{articleId, jdbcType=INTEGER}
+    </select>
+<!--    List<ArticleEntity> getCategoryArticles(String category);-->
+    <select id="getCategoryArticles" resultType="com.javanorth.javanorthapp.entity.ArticleEntity">
+        select article_id, title, author, thumb, category, tags, publish_time
+        from tb_article
+        where category = #{category, jdbcType=VARCHAR}
+    </select>
+
+<!--    List<ArticleEntity> getArticleByKeyword(String keyword);-->
+    <select id="getArticleByKeyword" resultType="com.javanorth.javanorthapp.entity.ArticleEntity">
+        select article_id, title, author, category, thumb, tags, publish_time
+        from tb_article
+        where title like "%"#{keyword, jdbcType=VARCHAR}"%"
+
     </select>
 </mapper>

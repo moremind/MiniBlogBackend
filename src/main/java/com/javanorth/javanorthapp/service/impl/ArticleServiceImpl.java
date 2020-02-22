@@ -49,4 +49,34 @@ public class ArticleServiceImpl implements ArticleService {
         List<ArticleEntity> articles = getAllArticles();
         return new PageInfo<>(articles);
     }
+
+    @Override
+    public String getContent(Integer articleId) {
+        try {
+            return articleDao.getArticleContent(articleId);
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+        }
+        return null;
+    }
+
+    @Override
+    public List<ArticleEntity> getCategoryArticle(String origin) {
+        try {
+            return articleDao.getCategoryArticles(origin);
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+        }
+        return null;
+    }
+
+    @Override
+    public List<ArticleEntity> getArticleByKeyword(String keyword) {
+        try {
+            return articleDao.getArticleByKeyword(keyword);
+        } catch (Exception e) {
+            logger.info(e.getCause().toString());
+        }
+        return null;
+    }
 }

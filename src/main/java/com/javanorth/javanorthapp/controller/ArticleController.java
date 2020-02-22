@@ -11,6 +11,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.NotNull;
+
 @RestController
 @RequestMapping("/api/article")
 public class ArticleController {
@@ -28,9 +30,24 @@ public class ArticleController {
         return ResultUtils.success(result);
     }
 
-    @RequestMapping(value = "/getArticle", method = {RequestMethod.GET, RequestMethod.POST})
+    @RequestMapping(value = "/getArticle", method = { RequestMethod.GET, RequestMethod.POST })
     public ResultUtils getPageArticle(@RequestParam(defaultValue = "1") Integer pageNum,
                                       @RequestParam(defaultValue = "6") Integer pageSize) {
         return ResultUtils.success(articleService.getOnePageArticle(pageNum, pageSize));
+    }
+
+    @RequestMapping(value = "/getContent", method = { RequestMethod.POST, RequestMethod.GET })
+    public ResultUtils getContentById(@NotNull @RequestParam Integer articleId) {
+        return ResultUtils.success(articleService.getContent(articleId));
+    }
+
+    @RequestMapping(value = "/getArticlesByCategory", method = { RequestMethod.POST, RequestMethod.GET })
+    public ResultUtils getArticlesByCategory(@NotNull @RequestParam String category) {
+        return ResultUtils.success(articleService.getCategoryArticle(category));
+    }
+
+    @RequestMapping(value = "/search", method = { RequestMethod.POST, RequestMethod.GET })
+    public ResultUtils searchArticle(@NotNull @RequestParam String keyword) {
+        return ResultUtils.success(articleService.getArticleByKeyword(keyword));
     }
 }

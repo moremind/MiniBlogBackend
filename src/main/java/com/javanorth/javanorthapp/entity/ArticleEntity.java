@@ -12,7 +12,7 @@ public class ArticleEntity {
     private String title;
     private String author;
     private String tags;
+    private String thumb;
     private String category;
-    private String content;
     private String publishTime;
 }

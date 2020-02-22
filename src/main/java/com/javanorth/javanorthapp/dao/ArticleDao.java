@@ -23,4 +23,25 @@ public interface ArticleDao {
      * @return
      */
     List<ArticleEntity> getAllArticle();
+
+    /**
+     * 通过文章id获取文章内容
+     * @param articleId 文章id
+     * @return 文章内容
+     */
+    String getArticleContent(Integer articleId);
+
+    /**
+     * 通过分类获取文章
+     * @param category 分类
+     * @return 分类后的文章
+     */
+    List<ArticleEntity> getCategoryArticles(String category);
+
+    /**
+     * 通过keyword查询文章
+     * @param keyword keyword
+     * @return 文章列表
+     */
+    List<ArticleEntity> getArticleByKeyword(String keyword);
 }
