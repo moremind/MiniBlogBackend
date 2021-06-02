@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.javanorth.javanorthapp.dao.CategoryDao">
+<mapper namespace="com.javanorth.javanorthapp.miniapp.dao.CategoryDao">
 <!--    List<Category> listCategory();-->
-    <select id="listCategory" resultType="com.javanorth.javanorthapp.entity.Category">
+    <select id="listCategory" resultType="com.javanorth.javanorthapp.miniapp.entity.Category">
         select id, origin, value, url, image
         from tb_category
     </select>

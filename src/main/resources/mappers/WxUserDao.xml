@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.javanorth.javanorthapp.dao.WxUserDao">
+<mapper namespace="com.javanorth.javanorthapp.miniapp.dao.WxUserDao">
     <!--   Integer queryUserIdByOpenId(String openId);-->
     <select id="queryUserIdByOpenId" resultType="java.lang.Integer">
         select user_id
@@ -10,7 +10,7 @@
     </select>
 
 <!--    boolean insertWxUser(WxUser wxUser);-->
-    <insert id="insertWxUser" parameterType="com.javanorth.javanorthapp.entity.WxUser">
+    <insert id="insertWxUser" parameterType="com.javanorth.javanorthapp.miniapp.entity.WxUser">
         insert into tb_wxuser(open_id, nick_name, user_thumb, gender, country, province, city)
         values (#{openId, jdbcType=VARCHAR}, #{nickname, jdbcType=VARCHAR}, #{userThumb, jdbcType=VARCHAR},
         #{gender, jdbcType=INTEGER}, #{country, jdbcType=VARCHAR}, #{province, jdbcType=VARCHAR},
