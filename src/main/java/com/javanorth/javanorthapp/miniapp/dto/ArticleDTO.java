@@ -1,16 +1,11 @@
 package com.javanorth.javanorthapp.miniapp.dto;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
-@Getter
-@Setter
-@ToString
+/**
+ * @author <a href="hefengen@hotmail.com">finen</a>
+ * @description article dto
+ * @see
+ * @since 1.0.0
+ */
 public class ArticleDTO {
-    private String title;
-    private String author;
-    private String tags;
-    private String category;
-    private String content;
+
 }

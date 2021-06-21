@@ -1,4 +1,4 @@
-package com.javanorth.javanorthapp.miniapp.controller;
+package com.javanorth.javanorthapp.admin.controller;
 
 import com.javanorth.javanorthapp.system.response.Result;
 import com.javanorth.javanorthapp.system.response.ResultEnum;
@@ -8,18 +8,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author <a href="hefengen@hotmail.com">finen</a>
+ *
  * @description
+ * @author <a href="hefengen@hotmail.com">finen</a>
  * @see
  * @since
  */
 @RestController
-public class TestController implements CommonController {
-
+public class AdminTestController implements AdminCommonController {
     @RequestMapping("/test")
     @ResponseBody
     public Result test() {
         return ResultUtil.success(ResultEnum.GLOBAL_SUCCESS.getCode(), ResultEnum.GLOBAL_SUCCESS.getMessage());
     }
-
 }
