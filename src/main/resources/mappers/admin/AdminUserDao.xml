@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.simplethinking.miniblogapp.admin.dao.AdminUserDao">
+
+    <!--insert admin-->
+    <!--boolean insertAdmin(Admin admin);-->
+    <insert id="insertAdmin" parameterType="cn.simplethinking.miniblogapp.admin.entity.Admin">
+        INSERT IGNORE INTO tb_admin(username, password, login_time, create_time, update_time)
+        VALUES (#{username, jdbcType=VARCHAR}, #{password, jdbcType=VARCHAR}, now(), now(), now())
+    </insert>
+
+    <!-- 查询管理员用户 -->
+    <!--Admin getAdmin(String username);-->
+    <select id="getAdmin" parameterType="java.lang.String" resultType="cn.simplethinking.miniblogapp.admin.entity.Admin">
+        SELECT *
+        FROM tb_admin
+        WHERE username = #{username}
+    </select>
+
+    <!--更新管理员状态信息-->
+    <!--boolean updateAdminLogin(Date lastLoginTime);-->
+    <update id="updateAdminLogin">
+        update tb_admin
+        <set>
+            login_time = now(),
+            <if test="lastLoginTime != null">
+                last_login_time = #{lastLoginTime}
+            </if>
+        </set>
+        where username = #{username}
+    </update>
+
+
+
+</mapper>
