@@ -32,12 +32,12 @@ public class Article {
     /**
      * 文章标签
      */
-    private List<String> tags;
+    private String tags;
 
     /**
      * 文章分类
      */
-    private List<String> categories;
+    private String categories;
 
     /**
      * 文章缩略图地址
@@ -109,19 +109,19 @@ public class Article {
         this.content = content;
     }
 
-    public List<String> getTags() {
+    public String getTags() {
         return tags;
     }
 
-    public void setTags(List<String> tags) {
+    public void setTags(String tags) {
         this.tags = tags;
     }
 
-    public List<String> getCategories() {
+    public String getCategories() {
         return categories;
     }
 
-    public void setCategories(List<String> categories) {
+    public void setCategories(String categories) {
         this.categories = categories;
     }
 
@@ -149,12 +149,12 @@ public class Article {
         this.focus = focus;
     }
 
-    public boolean isInTop() {
+    public boolean isTop() {
         return isTop;
     }
 
-    public void setInTop(boolean inTop) {
-        this.isTop = inTop;
+    public void setTop(boolean top) {
+        isTop = top;
     }
 
     public Date getCreateTime() {
@@ -173,6 +173,14 @@ public class Article {
         this.updateTime = updateTime;
     }
 
+    public Date getPublishTime() {
+        return publishTime;
+    }
+
+    public void setPublishTime(Date publishTime) {
+        this.publishTime = publishTime;
+    }
+
     @Override
     public String toString() {
         return "Article{" +
@@ -180,14 +188,15 @@ public class Article {
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", content='" + content + '\'' +
-                ", tags=" + tags +
-                ", categories=" + categories +
+                ", tags='" + tags + '\'' +
+                ", categories='" + categories + '\'' +
                 ", thumb='" + thumb + '\'' +
                 ", views=" + views +
                 ", focus=" + focus +
-                ", inTop=" + isTop +
+                ", isTop=" + isTop +
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
+                ", publishTime=" + publishTime +
                 '}';
     }
 }

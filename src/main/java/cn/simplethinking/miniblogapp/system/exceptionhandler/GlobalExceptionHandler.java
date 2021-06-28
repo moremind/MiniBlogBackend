@@ -6,6 +6,8 @@ import cn.simplethinking.miniblogapp.system.response.ResultUtil;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.io.IOException;
+
 /**
  * 全局异常处理
  */

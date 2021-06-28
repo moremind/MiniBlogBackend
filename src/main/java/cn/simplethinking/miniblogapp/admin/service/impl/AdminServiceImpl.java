@@ -24,8 +24,6 @@ import java.util.Optional;
 @Service
 public class AdminServiceImpl implements AdminService {
 
-    Logger logger = LoggerFactory.getLogger(WeChatUserController.class);
-
     @Autowired
     AdminUserDao adminUserDao;
 

@@ -20,6 +20,8 @@ public enum ResultEnum {
     GLOBAL_SUCCESS(20000, "Success"),
 
 
+
+
     //MINI-APP
     // 成功状态接口
     WECHAT_LOGIN_SUCCESS(21000, "WeChat Login Success"),
@@ -27,10 +29,23 @@ public enum ResultEnum {
     // ADMIN
     ADMIN_LOGIN_SUCCESS(22000, "admin login success"),
 
+    GITEE_FILE_UPLOAD_SUCCESS(20100, "Gitee File Upload Success"),
+
+    GITEE_FILE_DELETE_SUCCESS(20101, "Gitee File Delete Success"),
+
 
 
     // 失败状态接口
     GLOBAL_EXCEPTION(40000, "Global Exception"),
+
+    // 文件相关错误
+    FILE_NAME_ERROR(40001, "File OriginName Error"),
+
+    FILE_NOT_EXIST(40002, "File Not Exist"),
+
+    GITEE_FILE_UPLOAD_EXCEPTION(40100, "Upload File To Gitee Failed"),
+
+    GITEE_FILE_DELETE_FAILED(40101, "Gitee File Delete Failed"),
 
     // MINI-APP
     WECHAT_LOGIN_FAILED(41000, "WeChat Login Failed"),

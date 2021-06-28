@@ -15,10 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
  * @since
  */
 @RestController
+@RequestMapping("/test")
 public class AdminTestController implements AdminCommonController {
-    @RequestMapping("/test")
+    @RequestMapping("/test1")
     @ResponseBody
     public Result test() {
+//        System.out.println(FileUploadUtil.giteeUpload());
         return ResultUtil.success(ResultEnum.GLOBAL_SUCCESS.getCode(), ResultEnum.GLOBAL_SUCCESS.getMessage());
     }
 }
