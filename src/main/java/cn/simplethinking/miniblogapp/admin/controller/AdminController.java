@@ -8,6 +8,7 @@ import cn.simplethinking.miniblogapp.system.response.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -17,7 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 1.0.0
  */
 @RestController
-public class AdminController implements AdminCommonController {
+@RequestMapping("/admin")
+public class AdminController {
 
     @Autowired
     AdminService adminService;

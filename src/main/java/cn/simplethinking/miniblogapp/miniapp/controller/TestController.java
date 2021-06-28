@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since
  */
 @RestController
-public class TestController implements CommonController {
+public class TestController {
 
     @RequestMapping("/test")
     @ResponseBody

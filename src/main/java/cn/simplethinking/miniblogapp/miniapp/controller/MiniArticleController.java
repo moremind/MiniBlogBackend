@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 1.0.0
  */
 @RestController
-@RequestMapping("/article")
-public class MiniArticleController implements CommonController{
+@RequestMapping("/mini/article")
+public class MiniArticleController {
 
     @GetMapping(value = "/get/articles")
     public Result getArticles(int pageNum, int articleNum) {

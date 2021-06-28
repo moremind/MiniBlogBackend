@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping("/wechat")
+@RequestMapping("/mini/wechat")
 public class WeChatUserController {
     Logger logger = LoggerFactory.getLogger(WeChatUserController.class);
 

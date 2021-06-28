@@ -17,8 +17,8 @@ import java.io.IOException;
  * @since
  */
 @RestController
-@RequestMapping("/file")
-public class AdminFileController implements AdminCommonController {
+@RequestMapping("/admin/file")
+public class AdminFileController  {
 
     @RequestMapping("/test")
     public Result test() {

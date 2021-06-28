@@ -2,7 +2,6 @@ package cn.simplethinking.miniblogapp.admin.controller;
 
 import cn.simplethinking.miniblogapp.admin.request.AdminArticleRequest;
 import cn.simplethinking.miniblogapp.admin.service.AdminArticleService;
-import cn.simplethinking.miniblogapp.miniapp.controller.CommonController;
 import cn.simplethinking.miniblogapp.miniapp.controller.WeChatUserController;
 import cn.simplethinking.miniblogapp.system.entity.Article;
 import cn.simplethinking.miniblogapp.system.response.Result;
@@ -24,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/article")
-public class AdminArticleController implements CommonController {
+public class AdminArticleController {
 
     Logger logger = LoggerFactory.getLogger(WeChatUserController.class);
 
