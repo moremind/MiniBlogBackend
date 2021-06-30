@@ -35,3 +35,7 @@ build/
 mvnw
 mvnw.cmd
 logs
+src/main/resources/config/
+src/main/resources/config/gitee.properties
+src/main/resources/config/gitee.properties
+src/main/resources/config/wx-app-config.properties

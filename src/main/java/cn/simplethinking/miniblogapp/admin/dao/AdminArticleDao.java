@@ -4,6 +4,8 @@ import cn.simplethinking.miniblogapp.system.entity.Article;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  *
  * @description
@@ -21,4 +23,6 @@ public interface AdminArticleDao {
      * @return
      */
     boolean insertArticle(Article article);
+
+    List<Article> listArticles();
 }

@@ -5,7 +5,16 @@
 <mapper namespace="cn.simplethinking.miniblogapp.admin.dao.AdminArticleDao">
     <!--插入文章-->
     <!--boolean insertArticle(Article article);-->
-    <insert id="insertArticle">
-
+    <insert id="insertArticle" parameterType="cn.simplethinking.miniblogapp.system.entity.Article">
+        INSERT INTO tb_article(title, author, content, thumb, tags, categories, is_top, publish_time, create_time, update_time)
+        VALUES (#{title, jdbcType=VARCHAR}, #{author, jdbcType=VARCHAR}, #{content, jdbcType=VARCHAR},
+                #{thumb, jdbcType=VARCHAR}, #{tags, jdbcType=VARCHAR}, #{categories, jdbcType=VARCHAR},
+                #{isTop, jdbcType=BOOLEAN}, #{publishTime, jdbcType=DATE}, now(), now())
     </insert>
+
+    <!--List<Article> listArticles();-->
+    <select id="listArticles" resultType="cn.simplethinking.miniblogapp.system.entity.Article">
+        SELECT id, title, thumb, publish_time
+        FROM tb_article
+    </select>
 </mapper>

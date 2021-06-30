@@ -1,6 +1,6 @@
-package cn.simplethinking.miniblogapp.admin.request;
+package cn.simplethinking.miniblogapp.miniapp.request;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -39,6 +39,16 @@ public class AdminArticleRequest {
      * 文章缩略图地址
      */
     private String thumb;
+
+    /**
+     * 阅读数
+     */
+    private Integer views;
+
+    /**
+     * 关注数
+     */
+    private Integer focus;
 
     /**
      * 是否置顶
@@ -98,6 +108,21 @@ public class AdminArticleRequest {
         this.thumb = thumb;
     }
 
+    public Integer getViews() {
+        return views;
+    }
+
+    public void setViews(Integer views) {
+        this.views = views;
+    }
+
+    public Integer getFocus() {
+        return focus;
+    }
+
+    public void setFocus(Integer focus) {
+        this.focus = focus;
+    }
 
     public boolean isTop() {
         return isTop;
@@ -124,6 +149,8 @@ public class AdminArticleRequest {
                 ", tags=" + tags +
                 ", categories=" + categories +
                 ", thumb='" + thumb + '\'' +
+                ", views=" + views +
+                ", focus=" + focus +
                 ", isTop=" + isTop +
                 ", publishDate=" + publishDate +
                 '}';

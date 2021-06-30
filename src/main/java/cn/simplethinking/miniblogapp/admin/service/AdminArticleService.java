@@ -2,6 +2,8 @@ package cn.simplethinking.miniblogapp.admin.service;
 
 import cn.simplethinking.miniblogapp.system.entity.Article;
 
+import java.util.List;
+
 /**
  *
  * @description
@@ -11,5 +13,7 @@ import cn.simplethinking.miniblogapp.system.entity.Article;
  */
 public interface AdminArticleService {
     boolean publishArticle(Article article);
+
+    List<Article> getArticles();
 
 }

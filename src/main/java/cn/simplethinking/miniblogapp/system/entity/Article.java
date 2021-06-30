@@ -1,7 +1,6 @@
 package cn.simplethinking.miniblogapp.system.entity;
 
-import java.util.Date;
-import java.util.List;
+import java.sql.Date;
 
 /**
  * @description Article Entity

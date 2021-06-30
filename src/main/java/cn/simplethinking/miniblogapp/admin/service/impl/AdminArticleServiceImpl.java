@@ -6,6 +6,8 @@ import cn.simplethinking.miniblogapp.system.entity.Article;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  *
  * @description
@@ -21,6 +23,14 @@ public class AdminArticleServiceImpl implements AdminArticleService {
 
     @Override
     public boolean publishArticle(Article article) {
+        adminArticleDao.insertArticle(article);
         return false;
     }
+
+    @Override
+    public List<Article> getArticles() {
+        return adminArticleDao.listArticles();
+    }
+
+
 }

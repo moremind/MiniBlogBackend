@@ -12,19 +12,13 @@ import java.io.IOException;
 
 /**
  * @author <a href="hefengen@hotmail.com">finen</a>
- * @description
+ * @description 服务端文件上传功能
  * @see
  * @since
  */
 @RestController
 @RequestMapping("/admin/file")
 public class AdminFileController  {
-
-    @RequestMapping("/test")
-    public Result test() {
-//        System.out.println(FileUploadUtil.giteeUpload());
-        return ResultUtil.success(ResultEnum.GLOBAL_SUCCESS.getCode(), ResultEnum.GLOBAL_SUCCESS.getMessage());
-    }
 
     /**
      * 文件上传至gitee接口
@@ -34,8 +28,6 @@ public class AdminFileController  {
      */
     @RequestMapping(value = "/gitee/upload")
     public Result giteeFileUpload(@RequestParam MultipartFile file) throws IOException {
-        System.out.println(file);
-        System.out.println(file.getName());
         Object result = GiteeFileUtil.giteeUpload(file);
         return ResultUtil.success(ResultEnum.GITEE_FILE_UPLOAD_SUCCESS.getCode(),
                 ResultEnum.GITEE_FILE_UPLOAD_SUCCESS.getMessage(),
