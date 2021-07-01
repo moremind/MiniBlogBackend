@@ -13,8 +13,22 @@
     </insert>
 
     <!--List<Article> listArticles();-->
-    <select id="listArticles" resultType="cn.simplethinking.miniblogapp.system.entity.Article">
+    <select id="listArticles" resultType="cn.simplethinking.miniblogapp.admin.dto.AdminArticleDTO">
         SELECT id, title, thumb, publish_time
         FROM tb_article
     </select>
+
+    <!--Article getArticleById(int id);-->
+    <select id="getArticleById" parameterType="java.lang.Integer" resultType="cn.simplethinking.miniblogapp.system.entity.Article">
+        SELECT *
+        FROM tb_article
+        WHERE id = #{id, jdbcType=INTEGER}
+    </select>
+
+    <!--boolean deleteArticleById(int id);-->
+    <delete id="deleteArticleById" parameterType="java.lang.Integer">
+        DELETE
+        FROM tb_article
+        WHERE id = #{id, jdbcType=INTEGER}
+    </delete>
 </mapper>

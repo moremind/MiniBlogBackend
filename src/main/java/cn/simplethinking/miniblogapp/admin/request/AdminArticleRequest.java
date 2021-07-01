@@ -1,5 +1,6 @@
 package cn.simplethinking.miniblogapp.admin.request;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
@@ -9,7 +10,8 @@ import java.util.List;
  * @see
  * @since
  */
-public class AdminArticleRequest {
+public class AdminArticleRequest implements Serializable {
+    private static final long serialVersionUID = 2058947625264023444L;
     /**
      * 文章标题
      */

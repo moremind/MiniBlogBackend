@@ -1,5 +1,6 @@
 package cn.simplethinking.miniblogapp.system.entity;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 /**
@@ -7,7 +8,8 @@ import java.sql.Date;
  * @author finen
  * @since 1.0.0
  */
-public class Article {
+public class Article implements Serializable {
+    private static final long serialVersionUID = -4316373755974711687L;
     /**
      * 文章id
      */

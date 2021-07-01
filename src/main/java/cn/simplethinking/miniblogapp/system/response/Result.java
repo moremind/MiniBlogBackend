@@ -1,12 +1,14 @@
 package cn.simplethinking.miniblogapp.system.response;
 
+import java.io.Serializable;
+
 /**
  * @author <a href="hefengen@hotmail.com">finen</a>
  * @description http response result
  * @see Result
  * @since 1.0
  */
-public class Result {
+public class Result implements Serializable {
     private int code;
     private String message;
     private Object data;
