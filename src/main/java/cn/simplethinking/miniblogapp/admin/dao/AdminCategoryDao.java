@@ -1,5 +1,6 @@
 package cn.simplethinking.miniblogapp.admin.dao;
 
+import cn.simplethinking.miniblogapp.admin.entity.AdminCategory;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 
@@ -12,4 +13,7 @@ import org.springframework.stereotype.Component;
 @Mapper
 @Component
 public interface AdminCategoryDao {
+
+
+    boolean insertCategory(AdminCategory category);
 }
